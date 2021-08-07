@@ -3,15 +3,27 @@
     <el-scrollbar wrap-style="max-height: 100vh;">
       <transition name="el-fade-in-linear">
         <div v-if="companyData" class="dashbord-container">
-          <el-row :gutter="20">
-            <el-col :span="12"
-              ><div class="grid-content bg-purple">
-                <breakdown :data="companyData.breakdown" /></div
-            ></el-col>
-            <el-col :span="12"
-              ><div class="grid-content bg-purple">
-                <intensity :data="companyData.intensity" /></div
-            ></el-col>
+          <el-breadcrumb separator-class="el-icon-arrow-right">
+            <el-breadcrumb-item :to="{ path: '/' }">Home</el-breadcrumb-item>
+            <el-breadcrumb-item>Companies</el-breadcrumb-item>
+            <el-breadcrumb-item>{{
+              companyData.summary.industry
+            }}</el-breadcrumb-item>
+            <el-breadcrumb-item>{{
+              companyData.prettyName
+            }}</el-breadcrumb-item>
+          </el-breadcrumb>
+          <el-row :gutter="20" class="data-card">
+            <Summary :data="companyData" />
+          </el-row>
+          <el-row :gutter="20" class="data-card">
+            <intensity :data="companyData" />
+          </el-row>
+          <el-row :gutter="20" class="data-card">
+            <breakdown :data="companyData" />
+          </el-row>
+          <el-row :gutter="20" class="data-card">
+            <alternatives :data="companyData" />
           </el-row>
         </div>
       </transition>
@@ -20,12 +32,16 @@
 </template>
 
 <script>
+import Alternatives from "../components/alternatives.vue";
 import breakdown from "../components/breakdown.vue";
 import Intensity from "../components/intensity.vue";
+import Summary from "../components/summary.vue";
 export default {
   components: {
     breakdown,
     Intensity,
+    Summary,
+    Alternatives,
   },
   data() {
     return {
@@ -53,4 +69,6 @@ export default {
 .dashbord-container
     width: 80%
     margin: 5em auto
+.data-card
+    margin-top: 2em
 </style>

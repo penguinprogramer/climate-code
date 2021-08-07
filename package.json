@@ -15,10 +15,14 @@
     "element-ui": "^2.4.5",
     "instantsearch.css": "^7.4.5",
     "nice-color-palettes": "^3.0.0",
+    "number-to-words": "^1.2.4",
+    "typed.js": "^2.0.12",
     "vue": "^2.6.11",
     "vue-echarts": "^6.0.0",
     "vue-instantsearch": "^3.8.1",
-    "vue-router": "^3.2.0"
+    "vue-quaggajs": "^1.0.12",
+    "vue-router": "^3.2.0",
+    "vue-typed-js": "^0.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

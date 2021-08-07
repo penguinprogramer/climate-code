@@ -1,7 +1,11 @@
 <template>
   <el-card class="box-card">
     <div slot="header" class="clearfix">
-      <span>Card name</span>
+      <span
+        >How much enviromental harm does
+        <strong>{{ data.prettyName }}</strong> do compared to the rest of the
+        <em> "{{ data.summary.industry }}" </em> industry
+      </span>
     </div>
     <v-chart class="chart" :option="option" />
   </el-card>
@@ -34,7 +38,7 @@ export default {
     VChart,
   },
   props: {
-    data: Array,
+    data: Object,
   },
   provide: {
     [THEME_KEY]: "light",
@@ -63,10 +67,23 @@ export default {
         },
         series: [
           {
-            name: "Traffic Sources",
+            name: "Industry Average",
             type: "line",
 
-            data: this.data,
+            data: this.data.industryIntesity,
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+          {
+            name: this.data.name,
+            type: "line",
+
+            data: this.data.intensity,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,

@@ -8,11 +8,20 @@
       <ais-search-box>
         <div slot-scope="{ isSearchStalled, refine }">
           <el-input
-            placeholder="Type something"
+            placeholder="Check a company / product"
             prefix-icon="el-icon-search"
             @input="refine(inputValue)"
             v-model="inputValue"
           >
+            <el-button
+              slot="append"
+              icon="el-icon-camera"
+              @click="
+                $router.push({
+                  name: 'Camera',
+                })
+              "
+            ></el-button>
           </el-input>
 
           <span :hidden="!isSearchStalled">Loading...</span>
@@ -54,15 +63,33 @@
 
 <script>
 import algoliasearch from "algoliasearch/lite";
+const algoliaClient = algoliasearch(
+  "94O6A12T6R",
+  "ab51f12ba8dbc0d3640438bb6c40daf7"
+);
+const searchClient = {
+  ...algoliaClient,
+  search(requests) {
+    if (requests.every(({ params }) => !params.query)) {
+      return Promise.resolve({
+        results: requests.map(() => ({
+          hits: [],
+          nbHits: 0,
+          nbPages: 0,
+          page: 0,
+          processingTimeMS: 0,
+        })),
+      });
+    }
 
+    return algoliaClient.search(requests);
+  },
+};
 export default {
   data() {
     return {
       inputValue: "",
-      searchClient: algoliasearch(
-        "94O6A12T6R",
-        "ab51f12ba8dbc0d3640438bb6c40daf7"
-      ),
+      searchClient,
     };
   },
 };

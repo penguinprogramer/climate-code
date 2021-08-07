@@ -1,10 +1,10 @@
 <template>
   <el-card class="box-card">
     <div slot="header" class="clearfix">
-      <span>Card name</span>
-      <el-button style="float: right; padding: 3px 0" type="text"
-        >Operation button</el-button
-      >
+      <span
+        >What are the sources of enviromental harm from
+        <strong>{{ data.prettyName }}</strong>
+      </span>
     </div>
     <v-chart class="chart" :option="option" />
   </el-card>
@@ -35,7 +35,7 @@ export default {
     VChart,
   },
   props: {
-    data: Array,
+    data: Object,
   },
   provide: {
     [THEME_KEY]: "light",
@@ -61,7 +61,7 @@ export default {
             type: "pie",
             radius: "55%",
             center: ["50%", "60%"],
-            data: this.data,
+            data: this.data.breakdown,
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,

@@ -11,13 +11,19 @@ const routes = [
     component: Home,
   },
   {
+    path: "/camera",
+    name: "Camera",
+    component: () =>
+      import(/* webpackChunkName: "camera" */ "../views/Camera.vue"),
+  },
+  {
     path: "/company/:name",
     name: "Company",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Company.vue"),
+      import(/* webpackChunkName: "company" */ "../views/Company.vue"),
   },
   {
     path: "/product/name",
@@ -26,7 +32,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Product.vue"),
+      import(/* webpackChunkName: "product" */ "../views/Product.vue"),
   },
 ];
 
