@@ -3,5 +3,5 @@ module.exports = (req, res) => {
     query: { name },
   } = req;
 
-  res.send(`Hello ${name}!`);
+  res.send(`Hello ${name}!, ${JSON.stringify(req)}`);
 };

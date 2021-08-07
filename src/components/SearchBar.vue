@@ -59,10 +59,7 @@ export default {
   data() {
     return {
       inputValue: "",
-      searchClient: algoliasearch(
-        "94O6A12T6R",
-        "f0f1efd84cdcefda348c79f1efadfc2f"
-      ),
+      searchClient: algoliasearch("94O6A12T6R"),
     };
   },
 };
