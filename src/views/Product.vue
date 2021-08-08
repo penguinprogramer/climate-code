@@ -29,7 +29,7 @@
 
 <script>
 import breakdown from "../components/breakdown.vue";
-import Summary from "../components/summary.vue";
+import Summary from "../components/productSummary.vue";
 export default {
   components: {
     breakdown,
