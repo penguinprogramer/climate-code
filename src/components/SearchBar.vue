@@ -14,6 +14,17 @@
             v-model="inputValue"
           >
             <el-button
+              v-if="onCam"
+              slot="prepend"
+              icon="el-icon-s-home"
+              @click="
+                $router.push({
+                  name: 'Home',
+                })
+              "
+            ></el-button>
+            <el-button
+              v-if="!onCam"
               slot="append"
               icon="el-icon-camera"
               @click="
@@ -86,11 +97,25 @@ const searchClient = {
   },
 };
 export default {
+  props: {
+    onCam: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       inputValue: "",
       searchClient,
     };
+  },
+  methods: {
+    setValue: function (value) {
+      this.inputValue = value;
+    },
+  },
+  created: function () {
+    this.$parent.$on("update", this.setValue);
   },
 };
 </script>

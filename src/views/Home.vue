@@ -45,7 +45,7 @@ export default {
       strings: [
         "The products <strong>you</strong> buy,",
         "The companies <strong>you</strong> use,",
-        "They all make a difference",
+        "It all makes a difference",
         "Choose the ones that don't cost the earth",
       ],
       typeSpeed: 80,
