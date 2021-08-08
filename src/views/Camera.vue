@@ -30,10 +30,11 @@ export default {
     return {
       stream: null,
       tracking: true,
+      message: null,
     };
   },
   methods: {
-    findProduct(name) {
+    async findProduct(name) {
       const client = algoliasearch(
         "94O6A12T6R",
         "ab51f12ba8dbc0d3640438bb6c40daf7"
@@ -53,13 +54,15 @@ export default {
 
       const json = await response.json();
       console.log(code, json);
+      json?.product?._keywords[0] &&
+        this.findProduct(json?.product?._keywords[0]);
 
       if (json?.product?.brands) {
         console.log("EMMITting");
         this.$emit("companyResult", json.product.brands);
-        this.findProduct(json?.product?._keywords[0]);
       } else {
-        this.$message({
+        this.message.close();
+        this.message = this.$message({
           message: "Could not find brand",
           type: "warning",
         });
