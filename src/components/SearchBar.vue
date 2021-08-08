@@ -111,11 +111,13 @@ export default {
   },
   methods: {
     setValue: function (value) {
+      console.log("setting value");
       this.inputValue = value;
     },
   },
   created: function () {
-    this.$parent.$on("update", this.setValue);
+    //   console.log()
+    this.$parent.$on("companyResult", this.setValue);
   },
 };
 </script>
