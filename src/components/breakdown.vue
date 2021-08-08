@@ -2,8 +2,8 @@
   <el-card class="box-card">
     <div slot="header" class="clearfix">
       <span
-        >What are the sources of enviromental harm from
-        <strong>{{ data.prettyName }}</strong>
+        >{{ title }}
+        <strong>{{ data.prettyName ? data.prettyName : data.name }}</strong>
       </span>
     </div>
     <v-chart class="chart" :option="option" />
@@ -35,6 +35,10 @@ export default {
     VChart,
   },
   props: {
+    title: {
+      type: String,
+      default: "What are the sources of enviromental harm from",
+    },
     data: Object,
   },
   provide: {
@@ -57,7 +61,7 @@ export default {
         },
         series: [
           {
-            name: "Traffic Sources",
+            name: "Harm Sources",
             type: "pie",
             radius: "55%",
             center: ["50%", "60%"],

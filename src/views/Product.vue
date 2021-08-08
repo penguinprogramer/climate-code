@@ -12,14 +12,14 @@
           <el-row :gutter="20" class="data-card">
             <Summary :data="productData" />
           </el-row>
-          <el-row :gutter="20" class="data-card">
+          <!-- <el-row :gutter="20" class="data-card">
             <intensity :data="productData" />
-          </el-row>
+          </el-row> -->
           <el-row :gutter="20" class="data-card">
-            <breakdown :data="productData" />
-          </el-row>
-          <el-row :gutter="20" class="data-card">
-            <alternatives :data="productData" />
+            <breakdown
+              :data="productData"
+              title="What are the sources of emmissions from"
+            />
           </el-row>
         </div>
       </transition>
@@ -28,16 +28,12 @@
 </template>
 
 <script>
-import Alternatives from "../components/alternatives.vue";
 import breakdown from "../components/breakdown.vue";
-import Intensity from "../components/intensity.vue";
 import Summary from "../components/summary.vue";
 export default {
   components: {
     breakdown,
-    Intensity,
     Summary,
-    Alternatives,
   },
   data() {
     return {
