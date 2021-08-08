@@ -60,9 +60,7 @@ export default {
       this.stream = await navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
-          facingMode: {
-            ideal: "environment",
-          },
+          facingMode: "environment",
         },
       });
       this.$refs.video.srcObject = this.stream;
