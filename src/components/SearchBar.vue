@@ -11,6 +11,7 @@
             placeholder="Check a company / product"
             prefix-icon="el-icon-search"
             @input="refine(inputValue)"
+            @focus="refine(inputValue)"
             v-model="inputValue"
           >
             <el-button
