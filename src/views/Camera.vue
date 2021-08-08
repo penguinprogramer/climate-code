@@ -59,7 +59,11 @@ export default {
     try {
       this.stream = await navigator.mediaDevices.getUserMedia({
         audio: false,
-        video: true,
+        video: {
+          facingMode: {
+            ideal: "environment",
+          },
+        },
       });
       this.$refs.video.srcObject = this.stream;
       Quagga.init(
