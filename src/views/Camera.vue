@@ -22,6 +22,8 @@
 <script>
 import SearchBar from "../components/SearchBar.vue";
 import Quagga from "quagga"; // ES6
+import algoliasearch from "algoliasearch/lite";
+
 export default {
   components: { SearchBar },
   data() {
@@ -31,6 +33,18 @@ export default {
     };
   },
   methods: {
+    findProduct(name) {
+      const client = algoliasearch(
+        "94O6A12T6R",
+        "ab51f12ba8dbc0d3640438bb6c40daf7"
+      );
+      const index = client.initIndex("products");
+
+      // only query string
+      index.search(name).then(({ hits }) => {
+        console.log(hits);
+      });
+    },
     async findCompany({ code }) {
       console.log("barcode");
       const response = await fetch(
@@ -43,6 +57,7 @@ export default {
       if (json?.product?.brands) {
         console.log("EMMITting");
         this.$emit("companyResult", json.product.brands);
+        this.findProduct(json?.product?._keywords[0]);
       } else {
         this.$message({
           message: "Could not find brand",
