@@ -31,6 +31,7 @@ export default {
       stream: null,
       tracking: true,
       message: null,
+      notification: null,
     };
   },
   methods: {
@@ -44,6 +45,20 @@ export default {
       // only query string
       index.search(name).then(({ hits }) => {
         console.log(hits);
+        if (hits?.[0]?.food_product) {
+          this.notification && this.notification.close();
+          this.notification = this.$notify({
+            title: `Product: ${hits[0].food_product} found`,
+            position: "bottom-left",
+            message: "Click the notification for more info",
+            onClick: () => {
+              this.$router.push({
+                name: "Product",
+                params: { name: hits[0].food_product },
+              });
+            },
+          });
+        }
       });
     },
     async findCompany({ code }) {
@@ -61,7 +76,7 @@ export default {
         console.log("EMMITting");
         this.$emit("companyResult", json.product.brands);
       } else {
-        this.message.close();
+        this.message && this.message.close();
         this.message = this.$message({
           message: "Could not find brand",
           type: "warning",
