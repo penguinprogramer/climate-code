@@ -23,9 +23,9 @@ yarn lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-##Inspiration
+## Inspiration
 I was inspired by the confusion i faced when trying to evaluate what products were most environmentally friendly
-##The concept
+## The concept
 
 People often want to do the right thing for the climate but they don’t know where to start. They feel they haven’t got the time as there are more imminent issues facing their lives and even if they did what would be the point anyway it would barely make a difference.
 
@@ -37,7 +37,7 @@ Put simply my solution is a text and image based search engine which shows the e
 
 Users can either enter a company name or scan a product barcode to get the details of either the product or company
 
-##How we built it
+## How we built it
 Going into the project I knew that i would need a framework. I chose to use Vue.js as i have lots of experience using it. Paired with the Component library Element UI, rapid prototyping was effortless as i could easily leverage existing components without having to worry about making my own.
 
 The database used was cockroachdb which is a variant of postgresql. I am still a quite new to using SQL so creating the backend API was quite a challenge. 
@@ -46,7 +46,7 @@ Barcode scanning was accomplished using Quagga js and product lookup uses openfo
 
 
 
-##What's next for Informed choices
+## What's next for Informed choices
 
 I hope to add polish by fixing small UI bugs that degrade the user experience. While only a minor issue, I think it is essential for it to be fixed before the solution can be useful to a mainstream audience.
 
@@ -63,13 +63,13 @@ I learnt a lot of SQL. Prior to this hackathon i did not i could handle a `SELEC
 ## source
 https://github.com/penguinprogramer/climate-code
 
-##Datasets:
+## Datasets:
 
 https://www.hbs.edu/impact-weighted-accounts/Pages/default.aspx
 
 https://www.kaggle.com/selfvivek/environment-impact-of-food-production#
 
-##Libraries
+## Libraries
 
     algoliasearch
 
