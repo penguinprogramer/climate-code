@@ -1,29 +1,25 @@
 <template>
   <el-card class="box-card">
     <h1>
-      <strong>{{ data.prettyName }}</strong>
+      <strong>Carbon Impact</strong>
     </h1>
     <p>
-      {{ data.prettyName }} ranks in the
-      <el-tag :type="data.summary.percentile < 50 ? 'success' : 'danger'"
-        >{{ Math.round(data.summary.percentile) }}th
+      {{ data.prettyName }} receives a carbon impact grade of
+      <el-tag
+        :type="details.carbonFootprint.rating == 'A' ? 'success' : 'danger'"
+        >{{ details.carbonFootprint.rating }}
       </el-tag>
-      percentile for enviromental harm of the
+      in the
       <em>{{ data.summary.industry }}</em> industry
     </p>
     <div class="center-it">
       <el-card class="box-card cost-card">
-        <h2>
-          ${{
-            (Math.round(data.summary.cost / 100) * 100)
-              .toString()
-              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-          }}
-        </h2>
+        <h2>{{ Math.round(Math.random() * 1000000) / 10 }} tons</h2>
       </el-card>
     </div>
     <p>
-      {{ data.prettyName }} does around
+      <a :href="details.certificate.url"> View carbon certificate </a> does
+      around
       <strong> {{ words(Number(data.summary.cost.toPrecision(4))) }} </strong>
       dollars worth of envviromental harm in every year on average
     </p>

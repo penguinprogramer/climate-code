@@ -56,7 +56,6 @@ app.get("/", async (req, res) => {
 
 app.get("/companies", companiesHandler);
 app.get("/details", detailsHandler);
-
 app.get("/products", productsHandler);
 let port = 3303;
 app.listen(port, () => {
