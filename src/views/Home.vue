@@ -7,7 +7,9 @@
     </div>
     <div class="typing">
       <h1>
-        <span id="type-text-container"><span id="type-text"></span></span>
+        <span id="type-text-container"
+          ><span id="type-text">Green Eye </span></span
+        >
       </h1>
     </div>
     <div class="home" v-bind:style="homeStyle">
@@ -71,9 +73,9 @@ export default {
   color: #fff
   h1
     span
-      background: #e74c3c
+      background: #1abc9c
       font-size: 50px
-      padding: 0.3em 0 0.3em 0.3em
+      padding: 0.3em 0.3em 0.3em 0.3em
 .search
   max-width: 400px
   width: 80%
