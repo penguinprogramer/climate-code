@@ -18,10 +18,7 @@
       </el-card>
     </div>
     <p>
-      <a :href="details.certificate.url"> View carbon certificate </a> does
-      around
-      <strong> {{ words(Number(data.summary.cost.toPrecision(4))) }} </strong>
-      dollars worth of envviromental harm in every year on average
+      <a :href="details.certificate.url"> View carbon certificate </a>
     </p>
   </el-card>
 </template>
