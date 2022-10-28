@@ -1,14 +1,22 @@
+const express = require('express')
+const app = express()
+const companiesHandler  = require("./companiesHandler");
+const productsHandler = require("./productsHandler");
+// respond with "hello world" when a GET request is made to the homepage
+
+
 if (process.env.NODE_ENV == "development") {
   require("dotenv").config();
 }
 const { Pool } = require("pg");
 
+
 const config = {
-  user: process.env.db_username,
-  password: process.env.db_password,
-  host: process.env.db_host,
-  database: process.env.db_database,
-  port: +process.env.db_port,
+  user: "penguinprogramer",
+  password: "VLTJpwb5MyefDqFj",
+  host: "free-tier5.gcp-europe-west1.cockroachlabs.cloud",
+  database: "green-data-1005.penguinprogramer",
+  port: 26257,
   ssl: {
     rejectUnauthorized: false,
   },
@@ -21,7 +29,10 @@ const config = {
 
 const pool = new Pool(config);
 
-module.exports = async (req, res) => {
+console.log(JSON.stringify(config))
+
+
+app.get('/',async (req, res) => {
   console.log("connecting");
   res.json(
     await pool.connect().then((client) => {
@@ -40,4 +51,11 @@ module.exports = async (req, res) => {
         });
     })
   );
-};
+})
+
+app.get('/companies', companiesHandler);
+app.get('/products', productsHandler);
+let port  = 3303
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

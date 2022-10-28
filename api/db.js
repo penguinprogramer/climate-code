@@ -1,4 +1,5 @@
 if (process.env.NODE_ENV == "development") {
+  console.log("running in dev mode")
   require("dotenv").config();
 }
 const pg = require("pg");
@@ -22,7 +23,7 @@ const config = {
                 .toString()
         }*/
 };
-
+console.log(process.env)
 module.exports = class db {
   constructor() {
     this.pool = new Pool(config);
