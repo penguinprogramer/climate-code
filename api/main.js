@@ -4,6 +4,8 @@ const cors = require("cors");
 app.use(cors());
 const companiesHandler = require("./companiesHandler");
 const productsHandler = require("./productsHandler");
+const detailsHandler = require("./detailsHandler");
+
 // respond with "hello world" when a GET request is made to the homepage
 
 if (process.env.NODE_ENV == "development") {
@@ -53,6 +55,8 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/companies", companiesHandler);
+app.get("/details", detailsHandler);
+
 app.get("/products", productsHandler);
 let port = 3303;
 app.listen(port, () => {
