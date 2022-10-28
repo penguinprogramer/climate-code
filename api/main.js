@@ -1,15 +1,15 @@
-const express = require('express')
-const app = express()
-const companiesHandler  = require("./companiesHandler");
+const express = require("express");
+const app = express();
+const cors = require("cors");
+app.use(cors());
+const companiesHandler = require("./companiesHandler");
 const productsHandler = require("./productsHandler");
 // respond with "hello world" when a GET request is made to the homepage
-
 
 if (process.env.NODE_ENV == "development") {
   require("dotenv").config();
 }
 const { Pool } = require("pg");
-
 
 const config = {
   user: "penguinprogramer",
@@ -29,10 +29,9 @@ const config = {
 
 const pool = new Pool(config);
 
-console.log(JSON.stringify(config))
+console.log(JSON.stringify(config));
 
-
-app.get('/',async (req, res) => {
+app.get("/", async (req, res) => {
   console.log("connecting");
   res.json(
     await pool.connect().then((client) => {
@@ -51,11 +50,11 @@ app.get('/',async (req, res) => {
         });
     })
   );
-})
+});
 
-app.get('/companies', companiesHandler);
-app.get('/products', productsHandler);
-let port  = 3303
+app.get("/companies", companiesHandler);
+app.get("/products", productsHandler);
+let port = 3303;
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});

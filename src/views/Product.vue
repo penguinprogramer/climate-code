@@ -49,7 +49,9 @@ export default {
   },
   methods: {
     async getData(product) {
-      const response = await fetch("/api/products?name=" + product.trim());
+      const response = await fetch(
+        "http://3.66.175.129:3303/products?name=" + product.trim()
+      );
       const json = response.json();
       return json;
     },
