@@ -47,15 +47,18 @@ export default {
           trigger: "item",
           formatter: "{a} <br/>{b} : {c} ({d}%)",
         },
+
         legend: {
-          orient: "vertical",
-          left: "right",
+          //   orient: "vertical",
+
+          //  top: 'bottom'
+          show: false,
         },
         series: [
           {
             name: "Harm Sources",
             type: "pie",
-            radius: "55%",
+            radius: "45%",
             center: ["50%", "60%"],
             data: this.data.breakdown,
             emphasis: {
@@ -75,6 +78,6 @@ export default {
 
 <style scoped>
 .chart {
-  height: 400px;
+  height: 215px;
 }
 </style>

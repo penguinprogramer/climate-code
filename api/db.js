@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV == "development") {
-  console.log("running in dev mode")
-  require("dotenv").config();
+  console.log("running in dev mode");
 }
+require("dotenv").config();
 const pg = require("pg");
 pg.types.setTypeParser(20, "text", parseInt);
 pg.types.setTypeParser(1700, "text", parseFloat);
@@ -23,7 +23,7 @@ const config = {
                 .toString()
         }*/
 };
-console.log(process.env)
+console.log(process.env);
 module.exports = class db {
   constructor() {
     this.pool = new Pool(config);
