@@ -1,0 +1,6 @@
+diff a/src/views/Product.vue b/src/views/Product.vue	(rejected hunks)
+@@ -52,3 +52 @@ export default {
+-      const response = await fetch(
+-        "/products?name=" + product.trim()
+-      );
++      const response = await fetch("/products?name=" + product.trim());

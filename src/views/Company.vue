@@ -14,7 +14,10 @@
             }}</el-breadcrumb-item>
           </el-breadcrumb>
           <el-row :gutter="20" class="data-card">
-            <Summary :data="companyData" />
+            <Summary :data="companyData" :details="companyDetails" />
+          </el-row>
+          <el-row :gutter="20" class="data-card">
+            <Carbon :data="companyData" :details="companyDetails" />
           </el-row>
           <el-row :gutter="20" class="data-card">
             <intensity :data="companyData" />
@@ -34,6 +37,7 @@
 <script>
 import Alternatives from "../components/alternatives.vue";
 import breakdown from "../components/breakdown.vue";
+import Carbon from "../components/carbon.vue";
 import Intensity from "../components/intensity.vue";
 import Summary from "../components/summary.vue";
 export default {
@@ -41,11 +45,13 @@ export default {
     breakdown,
     Intensity,
     Summary,
+    Carbon,
     Alternatives,
   },
   data() {
     return {
       companyData: null,
+      companyDetails: null,
     };
   },
   async created() {
@@ -53,11 +59,17 @@ export default {
       lock: true,
     });
     this.companyData = await this.getData(this.$route.params.name);
+    this.companyDetails = await this.getDetails(this.$route.params.name);
     loading.close();
   },
   methods: {
     async getData(company) {
-      const response = await fetch("/api/companies?name=" + company.trim());
+      const response = await fetch("/companies?name=" + company.trim());
+      const json = response.json();
+      return json;
+    },
+    async getDetails(company) {
+      const response = await fetch("/details?name=" + company.trim());
       const json = response.json();
       return json;
     },

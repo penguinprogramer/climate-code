@@ -1,6 +1,6 @@
 .DS_Store
 node_modules
-/dist
+
 .env
 api/.env
 # local env files
@@ -23,3 +23,5 @@ pnpm-debug.log*
 *.sw?
 
 .vercel
+api/package-lock.json
+package-lock.json

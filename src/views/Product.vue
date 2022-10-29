@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     async getData(product) {
-      const response = await fetch("/api/products?name=" + product.trim());
+      const response = await fetch("/products?name=" + product.trim());
       const json = response.json();
       return json;
     },

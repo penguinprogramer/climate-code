@@ -35,11 +35,15 @@ import converter from "number-to-words";
 export default {
   props: {
     data: Object,
+    details: Object,
   },
   methods: {
     words(number) {
       return converter.toWords(number);
     },
+  },
+  mounted() {
+    console.log(this.details);
   },
 };
 </script>

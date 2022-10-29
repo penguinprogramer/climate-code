@@ -3,6 +3,22 @@ module.exports = class {
     this.name = name;
     this.db = db;
   }
+  getCarbonFootprint() {
+    return {
+      value: 1,
+      rating: "A",
+    };
+  }
+  getCertificate() {
+    return {
+      url: "https://www.africau.edu/images/default/sample.pdf",
+    };
+  }
+  getCarbonPercent() {
+    return {
+      emmission: Math.round(Math.random() * 10000) / 10,
+    };
+  }
   getPercentile() {
     return this.db.getRow(
       /*sql */ `

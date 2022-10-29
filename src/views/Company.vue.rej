@@ -1,0 +1,11 @@
+diff a/src/views/Company.vue b/src/views/Company.vue	(rejected hunks)
+@@ -67,3 +67 @@ export default {
+-      const response = await fetch(
+-        "/companies?name=" + company.trim()
+-      );
++      const response = await fetch("/companies?name=" + company.trim());
+@@ -74,3 +72 @@ export default {
+-      const response = await fetch(
+-        "/details?name=" + company.trim()
+-      );
++      const response = await fetch("/details?name=" + company.trim());

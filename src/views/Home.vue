@@ -7,7 +7,9 @@
     </div>
     <div class="typing">
       <h1>
-        <span id="type-text-container"><span id="type-text"></span></span>
+        <span id="type-text-container"
+          ><span id="type-text">Green Eye </span></span
+        >
       </h1>
     </div>
     <div class="home" v-bind:style="homeStyle">
@@ -22,7 +24,7 @@
 // @ is an alias to /src
 import SearchBar from "../components/SearchBar.vue";
 import niceColorPalettes from "nice-color-palettes";
-import Typed from "typed.js";
+// import Typed from "typed.js";
 
 export default {
   name: "Home",
@@ -41,23 +43,23 @@ export default {
     this.colors =
       niceColorPalettes[Math.round(niceColorPalettes.length * Math.random())];
     this.$refs.vid.playbackRate = 0.5;
-    var options = {
-      strings: [
-        "The products <strong>you</strong> buy,",
-        "The companies <strong>you</strong> use,",
-        "It all makes a difference",
-        "Choose the ones that don't cost the earth",
-      ],
-      typeSpeed: 80,
-      backSpeed: 40,
-      backDelay: 1000,
+    // var options = {
+    //   strings: [
+    //     "The products <strong>you</strong> buy,",
+    //     "The companies <strong>you</strong> use,",
+    //     "It all makes a difference",
+    //     "Choose the ones that don't cost the earth",
+    //   ],
+    //   typeSpeed: 200,
+    //   backSpeed: 40,
+    //   backDelay: 1000,
 
-      loop: true,
+    //   loop: true,
 
-      // showCursor: false,
-    };
+    //   // showCursor: false,
+    // };
 
-    new Typed("#type-text", options);
+    // new Typed("#type-text", options);
     // this.homeStyle.background = `linear-gradient(to bottom, ${this.colors[0]}, ${this.colors[0]})`;
   },
 };
@@ -71,9 +73,9 @@ export default {
   color: #fff
   h1
     span
-      background: #e74c3c
+      background: #1abc9c
       font-size: 50px
-      padding: 0.3em 0 0.3em 0.3em
+      padding: 0.3em 0.3em 0.3em 0.3em
 .search
   max-width: 400px
   width: 80%

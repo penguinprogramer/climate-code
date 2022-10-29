@@ -1,0 +1,10 @@
+diff a/src/views/Home.vue b/src/views/Home.vue	(rejected hunks)
+@@ -10 +10,3 @@
+-        <span id="type-text-container"><span id="type-text">Green Eye </span></span>
++        <span id="type-text-container"
++          ><span id="type-text">Green Eye </span></span
++        >
+@@ -41 +43,2 @@ export default {
+-    this.colors = niceColorPalettes[Math.round(niceColorPalettes.length * Math.random())];
++    this.colors =
++      niceColorPalettes[Math.round(niceColorPalettes.length * Math.random())];
