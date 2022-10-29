@@ -60,8 +60,6 @@ Finally I hope to improve the existing data by adding contextual data  for insta
  I am most proud of how seamles the barcode scanning is, while still a little buggy it seems almost magical that a product can be scanned and all it's details seen.
 ##What we learned
 I learnt a lot of SQL. Prior to this hackathon i did not i could handle a `SELECT * FROM` clause and that's about it. In this project  really expanded my knowledge by using `GROUP BY` and `PARTITION BY` as well as functions like `AVG()` and `PERCENT_RANK()`
-## source
-https://github.com/penguinprogramer/climate-code
 
 ## Datasets:
 
