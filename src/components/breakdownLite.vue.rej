@@ -1,0 +1,12 @@
+diff a/src/components/breakdownLite.vue b/src/components/breakdownLite.vue	(rejected hunks)
+@@ -50 +50 @@ export default {
+-        
++
+@@ -52 +52 @@ export default {
+-        //   orient: "vertical",
++          //   orient: "vertical",
+@@ -54,2 +54,2 @@ export default {
+-        //  top: 'bottom'
+-        show:false
++          //  top: 'bottom'
++          show: false,
