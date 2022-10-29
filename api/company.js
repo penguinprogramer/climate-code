@@ -4,10 +4,19 @@ module.exports = class {
     this.db = db;
   }
   getCarbonFootprint() {
-    return {
-      value: 1,
-      rating: "A",
-    };
+    if (Math.random() > 0.5) {
+      return {
+        value: 1,
+        rating: "A",
+      }
+    } else {
+      return {
+        value: 2,
+        rating: "B",
+      }
+    }
+  }
+
   }
   getCertificate() {
     return {
