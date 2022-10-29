@@ -2,9 +2,9 @@
   <div>
     <transition name="el-fade-in-linear">
       <div v-if="companyData" class="dashbord-container">
-        <!-- <h1 style="text-align: center">
+        <h1 style="text-align: center">
           <strong>{{ companyData.prettyName }}</strong>
-        </h1> -->
+        </h1>
 
         <el-row type="flex" class="row-bg" justify="center">
           <el-col :span="5"
@@ -70,7 +70,7 @@
           ><a
             target="_blank"
             :href="
-              '/#/companies/' +
+              'https://greeneye.docsoc.co.uk/#/companies/' +
               this.$route.params.name.trim()
             "
             >Show Alternatives</a
