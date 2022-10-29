@@ -64,16 +64,12 @@ export default {
   },
   methods: {
     async getData(company) {
-      const response = await fetch(
-        "http://3.66.175.129:3303/companies?name=" + company.trim()
-      );
+      const response = await fetch("/companies?name=" + company.trim());
       const json = response.json();
       return json;
     },
     async getDetails(company) {
-      const response = await fetch(
-        "http://3.66.175.129:3303/details?name=" + company.trim()
-      );
+      const response = await fetch("/details?name=" + company.trim());
       const json = response.json();
       return json;
     },
