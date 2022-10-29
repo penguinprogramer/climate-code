@@ -1,5 +1,5 @@
-# climatecode
-This project allows users to look up a company either by name or by scanning the barcode of a project. Following that they see an overview of the environmental impacts that the company is having.
+# Greeneye
+This project allows users to look up a company either by name or by scanning the barcode of a project and get the sustainable related info about the project. We also support plugins to use the BE PAIs to display data.
 ## Project setup
 ```
 yarn install
