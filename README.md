@@ -20,9 +20,6 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 ##What it does
 
 Put simply my solution is a text and image based search engine which shows the environmental credentials of both companies and products.
