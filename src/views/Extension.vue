@@ -71,7 +71,7 @@
             target="_blank"
             :href="
               '/#/companies/' +
-              this.$route.params.name.trim()git 
+              this.$route.params.name.trim()
             "
             >Show Alternatives</a
           >
