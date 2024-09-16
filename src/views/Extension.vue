@@ -70,7 +70,7 @@
           ><a
             target="_blank"
             :href="
-              'http://3.66.175.129:8080/#/companies/' +
+              'https://greeneye.docsoc.co.uk/#/company/' +
               this.$route.params.name.trim()
             "
             >Show Alternatives</a
